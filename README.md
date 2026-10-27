@@ -33,7 +33,7 @@ The `RunSkiPaste` macro works without the ribbon. Add it to the Quick Access Too
 - Works in one column only
 - Pastes values only (no formulas/formatting)
 - Optimized for filtered tables
-- `assets/icon.svg` is included for reference but is not embedded in the add-in. The ribbon button uses a built-in Excel icon (`imageMso="Paste"`).
+- If the ribbon tab does not appear automatically, open `SkiPaste.xlam` in **Office RibbonX Editor**, insert **Office 2010+ Custom UI Part**, paste the contents of `customUI14.xml`, save and close.
 
 ## License
 

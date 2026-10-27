@@ -8,13 +8,10 @@ Public Sub PasteToVisibleCellsOnly(Optional control As IRibbonControl)
     Dim TargetCell As Range
     Dim ws As Worksheet
     
-    Dim visRange As Range
-    Dim area As Range
     Dim lineIdx As Long
-    Dim rCount As Long
-    Dim i As Long
     Dim totalRows As Long
-    Dim blockArr() As Variant
+    Dim r As Long
+    Dim maxRow As Long
     
     Dim prevScreen As Boolean
     Dim prevEvents As Boolean
@@ -57,35 +54,19 @@ Public Sub PasteToVisibleCellsOnly(Optional control As IRibbonControl)
     
     On Error GoTo Cleanup
     
-    On Error Resume Next
-    Set visRange = ws.Range(TargetCell, ws.Cells(ws.Rows.Count, TargetCell.Column)).SpecialCells(xlCellTypeVisible)
-    On Error GoTo Cleanup
-    
-    If visRange Is Nothing Then
-        MsgBox "No visible cells found to paste into. Check your filter.", vbExclamation, "SkiPaste"
-        GoTo Cleanup
-    End If
-    
+    maxRow = ws.Rows.Count
     lineIdx = 0
+    For r = TargetCell.Row To maxRow
+        If Not ws.Rows(r).Hidden Then
+            If lineIdx >= totalRows Then Exit For
+            ws.Cells(r, TargetCell.Column).Value = Lines(lineIdx)
+            lineIdx = lineIdx + 1
+        End If
+    Next r
     
-    For Each area In visRange.Areas
-        rCount = area.Rows.Count
-        
-        If lineIdx + rCount > totalRows Then
-            rCount = totalRows - lineIdx
-        End If
-        
-        If rCount > 0 Then
-            ReDim blockArr(1 To rCount, 1 To 1)
-            For i = 1 To rCount
-                blockArr(i, 1) = Lines(lineIdx + i - 1)
-            Next i
-            area.Resize(rCount, 1).Value = blockArr
-            lineIdx = lineIdx + rCount
-        End If
-        
-        If lineIdx >= totalRows Then Exit For
-    Next area
+    If lineIdx < totalRows Then
+        MsgBox "Not enough visible cells to paste all " & totalRows & " lines. Pasted " & lineIdx & " lines.", vbExclamation, "SkiPaste"
+    End If
     
 Cleanup:
     With Application
