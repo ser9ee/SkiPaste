@@ -1,7 +1,7 @@
 Attribute VB_Name = "Module1"
 Option Explicit
 
-Sub PasteToVisibleCellsOnly()
+Public Sub PasteToVisibleCellsOnly(Optional control As IRibbonControl)
     Dim DataObj As Object
     Dim ClipText As String
     Dim Lines() As String
@@ -99,4 +99,8 @@ Cleanup:
         MsgBox "Error during paste:" & vbCrLf & Err.Description, vbCritical, "SkiPaste"
         Err.Clear
     End If
+End Sub
+
+Public Sub RunSkiPaste()
+    PasteToVisibleCellsOnly
 End Sub

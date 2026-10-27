@@ -9,23 +9,31 @@ A lightweight Excel add-in that fixes Excel's copy-paste bug when filters are ac
 ## Installation
 
 1. Download and extract the archive.
-2. Right-click SkiPaste.xlam, select Properties, and check Unblock at the bottom. Click Apply.
-3. Run install.bat (will copy the add-in and add the folder to Trusted Locations).
-4. Open Excel → File > Options > Add-ins > Manage: Excel Add-ins > Go...
-5. Click Browse..., select SkiPaste.xlam, check the box and click OK.
-6. The SkiPaste tab will appear on the Ribbon.
+2. Right-click **SkiPaste.xlam**, select **Properties**, check **Unblock** at the bottom, click **Apply**.
+3. Run **install.bat** (copies `SkiPaste.xlam` to Excel's AddIns folder).
+4. Open Excel → **File > Options > Add-ins** > Manage: **Excel Add-ins** > **Go...**
+5. Click **Browse...**, select **SkiPaste.xlam**, check the box and click **OK**.
+6. The **SkiPaste** tab should appear on the Ribbon.
+
+### If the ribbon tab does not appear
+
+The `RunSkiPaste` macro works without the ribbon. Add it to the Quick Access Toolbar:
+
+- Excel → Quick Access Toolbar dropdown → **More Commands**
+- Choose **Macros** → select **RunSkiPaste** → click **Add** → **OK**
 
 ## Usage
 
 1. Copy a column of values (Ctrl+C)
 2. Select the top visible cell in the target column
-3. Click SkiPaste > Paste to visible cells
+3. Click **SkiPaste > Paste to visible cells** (or use the QAT button)
 
 ## Notes
 
 - Works in one column only
 - Pastes values only (no formulas/formatting)
 - Optimized for filtered tables
+- `assets/icon.svg` is included for reference but is not embedded in the add-in. The ribbon button uses a built-in Excel icon (`imageMso="Paste"`).
 
 ## License
 

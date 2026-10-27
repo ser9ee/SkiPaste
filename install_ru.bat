@@ -1,37 +1,33 @@
 @echo off
-chcp 866 > nul
-title Установка SkiPaste
+chcp 1251 > nul
+title ╨г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ SkiPaste
 echo ===============================================
-echo           Установка SkiPaste
+echo           ╨г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ SkiPaste
 echo ===============================================
 echo.
 
 set "TARGET_DIR=%AppData%\Microsoft\AddIns"
-set "REG_KEY=HKCU\Software\Microsoft\Office\16.0\Excel\Security\Trusted Locations\SKIPASTE"
 
-if not exist "SkiPaste.xlam" (
-    echo [ОШИБКА] Файл SkiPaste.xlam не найден в текущей папке!
+if not exist "%~dp0SkiPaste.xlam" (
+    echo [╨Ю╨и╨Ш╨С╨Ъ╨Р] ╨д╨░╨╣╨╗ SkiPaste.xlam ╨╜╨╡ ╨╜╨░╨╣╨┤╨╡╨╜ ╤А╤П╨┤╨╛╨╝ ╤Б ╤Н╤В╨╕╨╝ bat-╤Д╨░╨╣╨╗╨╛╨╝!
     pause
     exit /b 1
 )
 
-echo [1/2] Копирование SkiPaste.xlam в папку надстроек...
-copy /Y "SkiPaste.xlam" "%TARGET_DIR%\" > nul
+if not exist "%TARGET_DIR%" mkdir "%TARGET_DIR%" >nul 2>&1
 
-echo [2/2] Добавление папки в Доверенные расположения...
-reg add "%REG_KEY%" /v Path /t REG_SZ /d "%TARGET_DIR%\" /f > nul
-reg add "%REG_KEY%" /v Description /t REG_SZ /d "SkiPaste Add-in" /f > nul
-reg add "%REG_KEY%" /v AllowSubfolders /t REG_DWORD /d 1 /f > nul
+echo ╨Ъ╨╛╨┐╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ SkiPaste.xlam ╨▓ ╨┐╨░╨┐╨║╤Г ╨╜╨░╨┤╤Б╤В╤А╨╛╨╡╨║...
+copy /Y "%~dp0SkiPaste.xlam" "%TARGET_DIR%\" >nul
 
 echo.
-echo Установка успешно завершена!
+echo ╨г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ ╤Г╤Б╨┐╨╡╤И╨╜╨╛!
 echo.
-echo Для активации:
-echo 1. Откройте Microsoft Excel
-echo 2. Нажмите Файл ^> Параметры ^> Надстройки
-echo 3. Внизу выберите "Надстройки Excel" и нажмите "Перейти..."
-echo 4. Нажмите "Обзор...", выберите SkiPaste.xlam, поставьте галочку и нажмите ОК
+echo ╨Ф╨╗╤П ╨░╨║╤В╨╕╨▓╨░╤Ж╨╕╨╕:
+echo 1. ╨Ю╤В╨║╤А╨╛╨╣╤В╨╡ Microsoft Excel
+echo 2. ╨Я╨╡╤А╨╡╨╣╨┤╨╕╤В╨╡ ╨д╨░╨╣╨╗ ^> ╨Я╨░╤А╨░╨╝╨╡╤В╤А╤Л ^> ╨Э╨░╨┤╤Б╤В╤А╨╛╨╣╨║╨╕
+echo 3. ╨Т╨╜╨╕╨╖╤Г ╨▓╤Л╨▒╨╡╤А╨╕╤В╨╡ "╨Э╨░╨┤╤Б╤В╤А╨╛╨╣╨║╨╕ Excel" ╨╕ ╨╜╨░╨╢╨╝╨╕╤В╨╡ "╨Я╨╡╤А╨╡╨╣╤В╨╕..."
+echo 4. ╨Я╨╛╤Б╤В╨░╨▓╤М╤В╨╡ ╨│╨░╨╗╨╛╤З╨║╤Г ╨╜╨░╨┐╤А╨╛╤В╨╕╨▓ "SkiPaste.xlam" ╨╕ ╨╜╨░╨╢╨╝╨╕╤В╨╡ ╨Ю╨Ъ
 echo.
-echo На ленте Excel появится вкладка SkiPaste
+echo ╨Т╨║╨╗╨░╨┤╨║╨░ SkiPaste ╨┐╨╛╤П╨▓╨╕╤В╤Б╤П ╨╜╨░ ╨╗╨╡╨╜╤В╨╡ Excel.
 echo ===============================================
 pause
