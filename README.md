@@ -40,7 +40,7 @@ The shortcut is active while the add-in is loaded.
 - Optimized for filtered tables
 ## Version history
 
-- **v0.4** — Context menu item (right-click → "SP: Paste to visible cells")
+- **v0.4** — Context menu item (right-click → "SP: Paste to visible cells"), active sheet validation, non-text clipboard handling
 - **v0.3** — 64-bit compatibility (PtrSafe / VBA7), version constant `SKIPASTE_VERSION`
 - **v0.2** — Hotkey `Ctrl+Shift+S`, ribbon button screentip/supertip
 - **v0.1** — Initial release
