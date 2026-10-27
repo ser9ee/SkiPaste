@@ -1,4 +1,4 @@
-# SkiPaste for Excel
+# SkiPaste for Excel v0.3
 
 A lightweight Excel add-in that fixes Excel's copy-paste bug when filters are active. It pastes copied column values only into visible cells, skipping hidden rows.
 
@@ -38,6 +38,12 @@ The shortcut is active while the add-in is loaded.
 - Works in one column only
 - Pastes values only (no formulas/formatting)
 - Optimized for filtered tables
+## Version history
+
+- **v0.3** — 64-bit compatibility (PtrSafe / VBA7), version constant `SKIPASTE_VERSION`
+- **v0.2** — Hotkey `Ctrl+Shift+S`, ribbon button screentip/supertip
+- **v0.1** — Initial release
+
 ## License
 
 MIT License
