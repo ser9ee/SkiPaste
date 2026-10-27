@@ -28,6 +28,11 @@ The `RunSkiPaste` macro works without the ribbon. Add it to the Quick Access Too
 2. Select the top visible cell in the target column
 3. Click **SkiPaste > Paste to visible cells** (or use the QAT button)
 
+### Hotkey
+
+Press **Ctrl+Shift+S** to run SkiPaste from anywhere in Excel (one left hand).  
+The shortcut is active while the add-in is loaded.
+
 ## Notes
 
 - Works in one column only
