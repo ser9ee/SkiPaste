@@ -1,5 +1,4 @@
-﻿@echo off
-chcp 65001 > nul
+@echo off
 title Install SkiPaste
 echo ===============================================
 echo           SkiPaste Installation
