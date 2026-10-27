@@ -14,7 +14,6 @@ A lightweight Excel add-in that fixes Excel's copy-paste bug when filters are ac
 4. Open Excel → **File > Options > Add-ins** > Manage: **Excel Add-ins** > **Go...**
 5. Click **Browse...**, select **SkiPaste.xlam**, check the box and click **OK**.
 6. The **SkiPaste** tab should appear on the Ribbon.
-7. Right-click any cell → **SP: Paste to visible cells** should appear in the context menu.
 
 ### If the ribbon tab does not appear
 
