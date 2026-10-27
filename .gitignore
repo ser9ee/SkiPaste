@@ -6,3 +6,5 @@ Thumbs.db
 *.bak
 *.bak2
 src/
+
+*.zip
