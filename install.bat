@@ -6,6 +6,7 @@ echo ===============================================
 echo.
 
 set "TARGET_DIR=%AppData%\Microsoft\AddIns"
+set "REG_KEY=HKCU\Software\Microsoft\Office\16.0\Excel\Security\Trusted Locations\SKIPASTE"
 
 if not exist "SkiPaste.xlam" (
     echo [ERROR] SkiPaste.xlam not found in this folder!
@@ -13,10 +14,16 @@ if not exist "SkiPaste.xlam" (
     exit /b 1
 )
 
-copy /Y "SkiPaste.xlam" "%TARGET_DIR%\"
+echo [1/2] Copying SkiPaste.xlam to AddIns folder...
+copy /Y "SkiPaste.xlam" "%TARGET_DIR%\" > nul
+
+echo [2/2] Adding folder to Trusted Locations...
+reg add "%REG_KEY%" /v Path /t REG_SZ /d "%TARGET_DIR%\" /f > nul
+reg add "%REG_KEY%" /v Description /t REG_SZ /d "SkiPaste Add-in" /f > nul
+reg add "%REG_KEY%" /v AllowSubfolders /t REG_DWORD /d 1 /f > nul
 
 echo.
-echo Successfully copied to: %TARGET_DIR%\SkiPaste.xlam
+echo Installation completed successfully!
 echo.
 echo To activate:
 echo 1. Open Microsoft Excel
