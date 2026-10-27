@@ -1,4 +1,4 @@
-# SkiPaste for Excel v0.3
+# SkiPaste for Excel v0.4
 
 A lightweight Excel add-in that fixes Excel's copy-paste bug when filters are active. It pastes copied column values only into visible cells, skipping hidden rows.
 
@@ -14,6 +14,7 @@ A lightweight Excel add-in that fixes Excel's copy-paste bug when filters are ac
 4. Open Excel → **File > Options > Add-ins** > Manage: **Excel Add-ins** > **Go...**
 5. Click **Browse...**, select **SkiPaste.xlam**, check the box and click **OK**.
 6. The **SkiPaste** tab should appear on the Ribbon.
+7. Right-click any cell → **SP: Paste to visible cells** should appear in the context menu.
 
 ### If the ribbon tab does not appear
 
@@ -26,7 +27,7 @@ The `RunSkiPaste` macro works without the ribbon. Add it to the Quick Access Too
 
 1. Copy a column of values (Ctrl+C)
 2. Select the top visible cell in the target column
-3. Click **SkiPaste > Paste to visible cells** (or use the QAT button)
+3. Click **SkiPaste > Paste to visible cells** (or right-click → **SP: Paste to visible cells**, or use the QAT button)
 
 ### Hotkey
 
@@ -40,6 +41,7 @@ The shortcut is active while the add-in is loaded.
 - Optimized for filtered tables
 ## Version history
 
+- **v0.4** — Context menu item (right-click → "SP: Paste to visible cells"), hotkey `Ctrl+Shift+S`, ribbon button
 - **v0.3** — 64-bit compatibility (PtrSafe / VBA7), version constant `SKIPASTE_VERSION`
 - **v0.2** — Hotkey `Ctrl+Shift+S`, ribbon button screentip/supertip
 - **v0.1** — Initial release
