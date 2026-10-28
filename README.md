@@ -1,15 +1,15 @@
-# SkiPaste for Excel v0.5
+# SkiPaste for Excel v0.6
 
-Lightweight Excel add-in that fixes the copy-paste bug when filters are active. Pastes copied column values only into visible cells, skipping hidden rows. Supports multi-column paste from clipboard tab-separated data. Adds undo via Ctrl+Z.
+Lightweight Excel add-in that fixes the copy-paste bug when filters are active. Pastes copied column values only into visible cells, skipping hidden rows. Supports multi-column paste from clipboard tab-separated data. Adds undo via Ctrl+Z. Optimized with array-based paste for large ranges.
 
 ### What it does
 1. Copy values from any source (Excel cells, web page, text editor)
 2. Select the top visible cell in the target column
-3. Press **Ctrl+Shift+S** or click **"Paste to visible"** ribbon button (or right-click → **"SP: Paste to visible cells"**)
+3. Press **Ctrl+Shift+P** or click **"Paste to visible"** ribbon button (or right-click → **"SP: Paste to visible cells"**)
 4. SkiPaste pastes each line into the next visible row, skipping hidden rows. Multi-column data (tab-separated) is pasted into adjacent visible columns.
 
 ### Hotkey
-Press **Ctrl+Shift+S** to run SkiPaste from anywhere in Excel. Works with one left hand while the add-in is loaded.
+Press **Ctrl+Shift+P** to run SkiPaste from anywhere in Excel. Works with one left hand while the add-in is loaded.
 
 ### Features
 - Works with single or multiple columns
@@ -38,6 +38,7 @@ Press **Ctrl+Shift+S** to run SkiPaste from anywhere in Excel. Works with one le
 
 ## Version history
 
+- **v0.6** — Array-based paste (faster for large ranges), hotkey changed to Ctrl+Shift+P
 - **v0.5** — Multi-column paste (tab-separated), undo via Ctrl+Z
 - **v0.4** — Context menu item (right-click → "SP: Paste to visible cells"), active sheet validation, non-text clipboard handling
 - **v0.3** — 64-bit compatibility (PtrSafe / VBA7), version constant `SKIPASTE_VERSION`
