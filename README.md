@@ -1,6 +1,6 @@
-# SkiPaste for Excel v0.8
+# SkiPaste for Excel v0.9
 
-Lightweight Excel add-in that fixes the copy-paste bug when filters are active. Pastes copied column values only into visible cells, skipping hidden rows. Supports multi-column paste from clipboard tab-separated data. Adds undo via Ctrl+Z. Optimized with array-based paste for large ranges. Numbers up to 10 digits are pasted as numbers (format "0"); longer numbers (barcodes, EAN-13) are pasted as text to avoid scientific notation.
+Lightweight Excel add-in that fixes the copy-paste bug when filters are active. Pastes copied column values only into visible cells, skipping hidden rows. Supports multi-column paste from clipboard tab-separated data. Adds undo via Ctrl+Z. Optimized with array-based paste for large ranges. Numbers up to 10 digits are pasted as numbers (format "0"); longer numbers (barcodes, EAN-13) are pasted as text to avoid scientific notation. Automatic update check on startup (can be disabled).
 
 ### What it does
 1. Copy values from any source (Excel cells, web page, text editor)
@@ -38,6 +38,7 @@ Press **Ctrl+Shift+P** to run SkiPaste from anywhere in Excel. Works with one le
 
 ## Version history
 
+- **v0.9** — Automatic update check on startup via GitHub API (can be disabled with `SKIPASTE_CHECK_UPDATES`)
 - **v0.8** — Smart number format: up to 10 digits as numbers (format "0"), longer (barcodes/EAN) as text to avoid scientific notation
 - **v0.7** — Text number format for pasted data (barcodes/EAN no longer show as 4,64005E+12), fixed runtime error 1004 on Excel exit
 - **v0.6** — Array-based paste (faster for large ranges), hotkey changed to Ctrl+Shift+P
