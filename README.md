@@ -38,6 +38,7 @@ Press **Ctrl+Shift+P** to run SkiPaste from anywhere in Excel. Works with one le
 
 ## Version history
 
+- **v1.0.1** — Fix paste on filtered ranges (SpecialCells loop), fix comma decimal separator
 - **v1.0** — Ribbon buttons "Check for updates" and "Settings"; update check disabled/enabled via Windows registry (SaveSetting/GetSetting); link to all GitHub releases for rollback
 - **v0.9** — Automatic update check on startup via GitHub API (can be disabled with `SKIPASTE_CHECK_UPDATES`)
 - **v0.8** — Smart number format: up to 10 digits as numbers (format "0"), longer (barcodes/EAN) as text to avoid scientific notation
