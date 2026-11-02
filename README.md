@@ -1,4 +1,4 @@
-# SkiPaste for Excel v1.0
+# SkiPaste for Excel v1.0.1
 
 Lightweight Excel add-in that fixes the copy-paste bug when filters are active. Pastes copied column values only into visible cells, skipping hidden rows. Supports multi-column paste from clipboard tab-separated data. Adds undo via Ctrl+Z. Optimized with array-based paste for large ranges. Numbers up to 10 digits are pasted as numbers (format "0"); longer numbers (barcodes, EAN-13) are pasted as text to avoid scientific notation. Automatic update check on startup (can be disabled in registry).
 
@@ -38,7 +38,7 @@ Press **Ctrl+Shift+P** to run SkiPaste from anywhere in Excel. Works with one le
 
 ## Version history
 
-- **v1.0.1** — Fix paste on filtered ranges (SpecialCells loop), fix comma decimal separator
+- **v1.0.1** — Fix paste on filtered ranges (SpecialCells loop), fix comma decimal separator (e.g. "1,5" → 1.5)
 - **v1.0** — Ribbon buttons "Check for updates" and "Settings"; update check disabled/enabled via Windows registry (SaveSetting/GetSetting); link to all GitHub releases for rollback
 - **v0.9** — Automatic update check on startup via GitHub API (can be disabled with `SKIPASTE_CHECK_UPDATES`)
 - **v0.8** — Smart number format: up to 10 digits as numbers (format "0"), longer (barcodes/EAN) as text to avoid scientific notation
