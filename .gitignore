@@ -9,3 +9,8 @@ src/
 
 *.zip
 agents.md
+build_xlam.ps1
+update_xlam_vba.ps1
+replace_asset.ps1
+upload_asset.ps1
+zip_b64.txt
